@@ -31,50 +31,51 @@ Before you begin, make sure you have the following installed on your system:
 
    ```shell
    cd path/to/chatbot-project
-Create a virtual environment (optional but recommended):
+* Create a virtual environment (optional but recommended):
 
-shell
-Copy code
+```
 python -m venv venv
+```
+
 Activate the virtual environment:
 
 On Windows:
-
-shell
-Copy code
+```
 venv\Scripts\activate
+```
 On macOS and Linux:
 
-shell
-Copy code
+```
 source venv/bin/activate
-Install the required libraries and dependencies using pip:
+```
 
-shell
-Copy code
+* Install the required libraries and dependencies using pip:
+
+```
 pip install -r requirements.txt
-Usage
+```
+* Usage
 Now that you have installed the necessary dependencies, you can run the chatbot project:
 
 Make sure you are still in the project directory and have your virtual environment activated.
 
 Start the chatbot by running the following command:
 
-shell
-Copy code
+```
 python chatbot.py
+```
 You'll see a welcome message from the chatbot. You can type your questions, engage in conversations, or simply say "bye" to exit.
 
-Feel free to interact with the chatbot and explore its capabilities. You can also refer to the "Additional Responses" section in the code to see how to add custom responses to specific user inputs.
+* Feel free to interact with the chatbot and explore its capabilities. You can also refer to the "Additional Responses" section in the code to see how to add custom responses to specific user inputs.
 
-Contributing
+* Contributing
 We welcome contributions and feedback from the community. If you have suggestions, bug reports, or want to add new features, please create an issue or submit a pull request.
 
-License
+* License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Thank you for joining us on this journey of chatbot development. Enjoy your chatbot interactions!
+Enjoy your chatbot interactions!
 
-🚀 Happy Chatting!
+* ### Hit a Star if you like this project
 
 
