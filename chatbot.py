@@ -43,42 +43,53 @@ def greeting(sentence):
         if word.lower() in GREETING_INPUTS:
             return random.choice(GREETING_RESPONSES)
 
-# copying from the notebook        
+ADDITIONAL_RESPONSES = {
+    "how are you": "I'm just a chatbot, but thanks for asking!",
+    "tell me a joke": "Why don't scientists trust atoms? Because they make up everything!",
+    "who created you": "I was created by a team of developers.",
+    "bye": "Goodbye! Feel free to come back if you have more questions.",
+}
+
+# Update the response function to include additional responses
 def response(user_response):
-    robo_response=''
+    robo_response = ''
     sent_tokens.append(user_response)
     TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
     tfidf = TfidfVec.fit_transform(sent_tokens)
     vals = cosine_similarity(tfidf[-1], tfidf)
-    idx=vals.argsort()[0][-2]
+    idx = vals.argsort()[0][-2]
     flat = vals.flatten()
     flat.sort()
     req_tfidf = flat[-2]
-    if(req_tfidf==0):
-        robo_response=robo_response+"I am sorry! I don't understand you"
-        return robo_response
-    else:
-        robo_response = robo_response+sent_tokens[idx]
-        return robo_response
     
-flag=True
+    if req_tfidf == 0:
+        robo_response = "I am sorry, I don't understand you."
+    else:
+        robo_response = sent_tokens[idx]
+    
+    # Check if the user input has an additional response
+    if user_response in ADDITIONAL_RESPONSES:
+        robo_response = ADDITIONAL_RESPONSES[user_response]
+    
+    return robo_response
+
+# Chatbot conversation loop
+flag = True
 print("Julie: My name is Julie. I will answer your queries about Chatbots. If you want to exit, type Bye!")
-while(flag==True):
-    user_response = input()
-    user_response=user_response.lower()
-    if(user_response!='bye'):
-        if(user_response=='thanks' or user_response=='thank you' ):
-            flag=False
-            print("Julie: You are welcome..")
+while flag:
+    user_response = input("You: ")
+    user_response = user_response.lower()
+    
+    if user_response != 'bye':
+        if user_response in ('thanks', 'thank you'):
+            flag = False
+            print("Julie: You're welcome.")
         else:
-            if(greeting(user_response)!=None):
-                print("Julie: "+greeting(user_response))
+            if greeting(user_response) is not None:
+                print("Julie: " + greeting(user_response))
             else:
-                print("Julie: ",end="")
-                print(response(user_response))
+                print("Julie: " + response(user_response))
                 sent_tokens.remove(user_response)
     else:
-        flag=False
-        print("Julie: Bye! take care..")    
-
-
+        flag = False
+        print("Julie: Goodbye! Take care.")
