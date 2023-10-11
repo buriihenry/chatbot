@@ -72,12 +72,11 @@ You'll see a welcome message from the chatbot. You can type your questions, enga
 
 I welcome contributions and feedback from the community. If you have suggestions, bug reports, or want to add new features, please create an issue or submit a pull request.
 
-* License:
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 Enjoy your chatbot interactions!
 
-* ### Hit a Star if you like this project
+* Hit a 
+$ add-stars -r 
+if you like this project
+
 
 
