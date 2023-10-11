@@ -148,4 +148,4 @@ while flag:
                 sent_tokens.remove(user_response)
     else:
         flag = False
-        print("Julie: Goodbye! Take care.")
+        print("Julie: Goodbye!Feel free to come back if you have more questions.")
