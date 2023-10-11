@@ -68,10 +68,12 @@ You'll see a welcome message from the chatbot. You can type your questions, enga
 
 * Feel free to interact with the chatbot and explore its capabilities. You can also refer to the "Additional Responses" section in the code to see how to add custom responses to specific user inputs.
 
-* Contributing
-We welcome contributions and feedback from the community. If you have suggestions, bug reports, or want to add new features, please create an issue or submit a pull request.
+* Contributing: 
 
-* License
+I welcome contributions and feedback from the community. If you have suggestions, bug reports, or want to add new features, please create an issue or submit a pull request.
+
+* License:
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Enjoy your chatbot interactions!
